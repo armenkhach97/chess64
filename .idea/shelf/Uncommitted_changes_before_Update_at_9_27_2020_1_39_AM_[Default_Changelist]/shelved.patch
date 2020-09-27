@@ -1,0 +1,36 @@
+Index: .styleci.yml
+===================================================================
+--- .styleci.yml	(revision b62869f888e07c8de0937a03071a6b907a552736)
++++ .styleci.yml	(revision b62869f888e07c8de0937a03071a6b907a552736)
+@@ -1,13 +0,0 @@
+-php:
+-  preset: laravel
+-  disabled:
+-    - no_unused_imports
+-  finder:
+-    not-name:
+-      - index.php
+-      - server.php
+-js:
+-  finder:
+-    not-name:
+-      - webpack.mix.js
+-css: true
+Index: config/database.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nuse Illuminate\\Support\\Str;\r\n\r\nreturn [\r\n\r\n    /*\r\n    |--------------------------------------------------------------------------\r\n    | Default Database Connection Name\r\n    |--------------------------------------------------------------------------\r\n    |\r\n    | Here you may specify which of the database connections below you wish\r\n    | to use as your default connection for all database work. Of course\r\n    | you may use many connections at once using the Database library.\r\n    |\r\n    */\r\n\r\n    'default' => env('DB_CONNECTION', 'mysql'),\r\n\r\n    /*\r\n    |--------------------------------------------------------------------------\r\n    | Database Connections\r\n    |--------------------------------------------------------------------------\r\n    |\r\n    | Here are each of the database connections setup for your application.\r\n    | Of course, examples of configuring each database platform that is\r\n    | supported by Laravel is shown below to make development simple.\r\n    |\r\n    |\r\n    | All database work in Laravel is done through the PHP PDO facilities\r\n    | so make sure you have the driver for your particular database of\r\n    | choice installed on your machine before you begin development.\r\n    |\r\n    */\r\n\r\n    'connections' => [\r\n\r\n        'sqlite' => [\r\n            'driver' => 'sqlite',\r\n            'url' => env('DATABASE_URL'),\r\n            'database' => env('DB_DATABASE', database_path('database.sqlite')),\r\n            'prefix' => '',\r\n            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),\r\n        ],\r\n\r\n        'mysql' => [\r\n            'driver' => 'mysql',\r\n            'url' => env('DATABASE_URL'),\r\n            'host' => env('DB_HOST', '127.0.0.1'),\r\n            'port' => env('DB_PORT', '3306'),\r\n            'database' => env('DB_DATABASE', 'blog'),\r\n            'username' => env('DB_USERNAME', 'root'),\r\n            'password' => env('DB_PASSWORD', ''),\r\n            'unix_socket' => env('DB_SOCKET', ''),\r\n            'charset' => 'utf8mb4',\r\n            'collation' => 'utf8mb4_unicode_ci',\r\n            'prefix' => '',\r\n            'prefix_indexes' => true,\r\n            'strict' => true,\r\n            'engine' => null,\r\n            'options' => extension_loaded('pdo_mysql') ? array_filter([\r\n                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),\r\n            ]) : [],\r\n        ],\r\n\r\n        'pgsql' => [\r\n            'driver' => 'pgsql',\r\n            'url' => env('DATABASE_URL'),\r\n            'host' => env('DB_HOST', '127.0.0.1'),\r\n            'port' => env('DB_PORT', '5432'),\r\n            'database' => env('DB_DATABASE', 'forge'),\r\n            'username' => env('DB_USERNAME', 'forge'),\r\n            'password' => env('DB_PASSWORD', ''),\r\n            'charset' => 'utf8',\r\n            'prefix' => '',\r\n            'prefix_indexes' => true,\r\n            'schema' => 'public',\r\n            'sslmode' => 'prefer',\r\n        ],\r\n\r\n        'sqlsrv' => [\r\n            'driver' => 'sqlsrv',\r\n            'url' => env('DATABASE_URL'),\r\n            'host' => env('DB_HOST', 'localhost'),\r\n            'port' => env('DB_PORT', '1433'),\r\n            'database' => env('DB_DATABASE', 'forge'),\r\n            'username' => env('DB_USERNAME', 'forge'),\r\n            'password' => env('DB_PASSWORD', ''),\r\n            'charset' => 'utf8',\r\n            'prefix' => '',\r\n            'prefix_indexes' => true,\r\n        ],\r\n\r\n    ],\r\n\r\n    /*\r\n    |--------------------------------------------------------------------------\r\n    | Migration Repository Table\r\n    |--------------------------------------------------------------------------\r\n    |\r\n    | This table keeps track of all the migrations that have already run for\r\n    | your application. Using this information, we can determine which of\r\n    | the migrations on disk haven't actually been run in the database.\r\n    |\r\n    */\r\n\r\n    'migrations' => 'migrations',\r\n\r\n    /*\r\n    |--------------------------------------------------------------------------\r\n    | Redis Databases\r\n    |--------------------------------------------------------------------------\r\n    |\r\n    | Redis is an open source, fast, and advanced key-value store that also\r\n    | provides a richer body of commands than a typical key-value system\r\n    | such as APC or Memcached. Laravel makes it easy to dig right in.\r\n    |\r\n    */\r\n\r\n    'redis' => [\r\n\r\n        'client' => env('REDIS_CLIENT', 'phpredis'),\r\n\r\n        'options' => [\r\n            'cluster' => env('REDIS_CLUSTER', 'redis'),\r\n            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),\r\n        ],\r\n\r\n        'default' => [\r\n            'url' => env('REDIS_URL'),\r\n            'host' => env('REDIS_HOST', '127.0.0.1'),\r\n            'password' => env('REDIS_PASSWORD', null),\r\n            'port' => env('REDIS_PORT', '6379'),\r\n            'database' => env('REDIS_DB', '0'),\r\n        ],\r\n\r\n        'cache' => [\r\n            'url' => env('REDIS_URL'),\r\n            'host' => env('REDIS_HOST', '127.0.0.1'),\r\n            'password' => env('REDIS_PASSWORD', null),\r\n            'port' => env('REDIS_PORT', '6379'),\r\n            'database' => env('REDIS_CACHE_DB', '1'),\r\n        ],\r\n\r\n    ],\r\n\r\n];\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- config/database.php	(revision b62869f888e07c8de0937a03071a6b907a552736)
++++ config/database.php	(date 1601155153709)
+@@ -48,7 +48,7 @@
+             'url' => env('DATABASE_URL'),
+             'host' => env('DB_HOST', '127.0.0.1'),
+             'port' => env('DB_PORT', '3306'),
+-            'database' => env('DB_DATABASE', 'blog'),
++            'database' => env('DB_DATABASE', '64chess'),
+             'username' => env('DB_USERNAME', 'root'),
+             'password' => env('DB_PASSWORD', ''),
+             'unix_socket' => env('DB_SOCKET', ''),
